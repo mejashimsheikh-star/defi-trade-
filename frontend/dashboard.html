@@ -1,1 +1,53 @@
-q
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>DeFi Trade Dashboard</h1>
+    <p>Welcome Trader</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Wallet Balance</h2>
+    <h1>1000 USDT</h1>
+</div>
+
+<div class="card">
+    <h2>BTC / USDT</h2>
+    <h1 id="btc">$0.00</h1>
+</div>
+
+<div class="card">
+    <h2>ETH / USDT</h2>
+    <h1 id="eth">$0.00</h1>
+</div>
+
+<div class="card">
+    <h2>SOL / USDT</h2>
+    <h1 id="sol">$0.00</h1>
+</div>
+
+<button onclick="location.href='trade.html'">
+Start 60s Trade
+</button>
+
+<br><br>
+
+<button onclick="location.href='portfolio.html'">
+Portfolio
+</button>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
