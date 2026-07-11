@@ -51,4 +51,4 @@ function updateMarket(){
 
 updateMarket();
 
-setInterval(updateMarket,2000);
+setInterval(updateMarket,2000); 
