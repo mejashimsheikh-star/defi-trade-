@@ -1,6 +1,5 @@
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI
 
-from chat import websocket_endpoint
 from wallet import get_balance, update_balance
 from crypto import get_price
 
@@ -16,21 +15,12 @@ def home():
     }
 
 
-
-@app.websocket("/chat")
-async def chat(websocket: WebSocket):
-
-    await websocket_endpoint(websocket)
-
-
-
 @app.get("/balance")
 def balance():
 
     return {
         "balance": get_balance()
     }
-
 
 
 @app.post("/trade/{amount}/{result}")
@@ -49,7 +39,6 @@ def trade(amount: float, result: str):
     return {
         "new_balance": new_balance
     }
-
 
 
 @app.get("/price")
