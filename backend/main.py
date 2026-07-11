@@ -2,6 +2,7 @@ from fastapi import FastAPI, WebSocket
 
 from chat import websocket_endpoint
 from wallet import get_balance, update_balance
+from crypto import get_price
 
 
 app = FastAPI()
@@ -9,9 +10,11 @@ app = FastAPI()
 
 @app.get("/")
 def home():
+
     return {
         "message": "DeFi Trade API Running"
     }
+
 
 
 @app.websocket("/chat")
@@ -38,7 +41,6 @@ def trade(amount: float, result: str):
         profit = amount * 0.8
         new_balance = update_balance(profit)
 
-
     else:
 
         new_balance = update_balance(-amount)
@@ -46,4 +48,13 @@ def trade(amount: float, result: str):
 
     return {
         "new_balance": new_balance
+    }
+
+
+
+@app.get("/price")
+def price():
+
+    return {
+        "BTC": get_price()
     }
