@@ -1,4 +1,5 @@
 from fastapi import WebSocket, WebSocketDisconnect
+from chat_database import save_message
 
 
 class ConnectionManager:
@@ -13,7 +14,8 @@ class ConnectionManager:
 
 
     def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
 
 
     async def broadcast(self, message: str):
@@ -37,6 +39,10 @@ async def websocket_endpoint(websocket: WebSocket):
 
             data = await websocket.receive_text()
 
+            # Save message in database
+            save_message("User", data)
+
+            # Send message to all connected users
             await manager.broadcast(data)
 
 
