@@ -52,3 +52,48 @@ function updateMarket(){
 updateMarket();
 
 setInterval(updateMarket,2000); 
+
+let countdown;
+
+function startTrade(direction){
+
+    let amount=document.getElementById("amount").value;
+
+    if(amount==""){
+        alert("Enter Amount");
+        return;
+    }
+
+    let time=60;
+
+    document.getElementById("result").innerHTML="Trade Running...";
+
+    clearInterval(countdown);
+
+    countdown=setInterval(function(){
+
+        time--;
+
+        document.getElementById("timer").innerHTML=time;
+
+        if(time<=0){
+
+            clearInterval(countdown);
+
+            let win=Math.random()>0.5;
+
+            if(win){
+
+                document.getElementById("result").innerHTML="✅ WIN";
+
+            }else{
+
+                document.getElementById("result").innerHTML="❌ LOSE";
+
+            }
+
+        }
+
+    },1000);
+
+}
