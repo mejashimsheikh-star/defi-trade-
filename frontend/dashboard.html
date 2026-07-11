@@ -94,6 +94,38 @@ Send
 
 
 <script src="chat.js"></script>
+<div class="wallet">
+
+<h2>Wallet 💰</h2>
+
+<p>
+Balance: $<span id="balance">Loading...</span>
+</p>
+
+
+<input 
+id="amount"
+type="number"
+placeholder="Trade amount"
+>
+
+
+<button onclick="trade('win')">
+UP Trade
+</button>
+
+
+<button onclick="trade('loss')">
+DOWN Trade
+</button>
+
+
+<p id="tradeResult"></p>
+
+</div>
+
+
+<script src="wallet.js"></script>
 
 </body>
 </html>
