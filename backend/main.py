@@ -6,4 +6,4 @@ app = FastAPI()
 def home():
     return {
         "message": "DeFi Trade API Running"
-    }
+    } 
