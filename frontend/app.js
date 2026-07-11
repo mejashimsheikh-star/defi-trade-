@@ -14,3 +14,18 @@ function updatePrice(){
 updatePrice();
 
 setInterval(updatePrice,2000);
+function login(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if(username==="" || password===""){
+        alert("Please enter username and password");
+        return;
+    }
+
+    alert("Demo Login Successful");
+
+    window.location.href="dashboard.html";
+
+}
