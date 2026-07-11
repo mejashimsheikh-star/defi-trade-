@@ -1,1 +1,58 @@
-q
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60s Trading</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>60 Second Trading</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Amount (USDT)</h2>
+
+<input type="number" id="amount" placeholder="Enter Amount">
+
+<br><br>
+
+<button onclick="startTrade('UP')">
+UP 📈
+</button>
+
+<br><br>
+
+<button onclick="startTrade('DOWN')">
+DOWN 📉
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Timer</h2>
+
+<h1 id="timer">60</h1>
+
+</div>
+
+<div class="card">
+
+<h2 id="result">
+Waiting...
+</h2>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
